@@ -1,0 +1,57 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: url(background_img.jpg);
+    background-size: auto;   
+}
+.container{
+    height: 400px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 80px;
+    left: 450px;
+    border-radius: 50px;
+
+    display: inline-block;
+
+    /* border: 5px solid black; */
+}
+.login{
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
+    position: relative;
+    top: 25px;
+    left: 100px;
+}
+.mail{
+    position: relative;
+    height: 40px;
+    width: 300px;
+    top: 60px;
+    left: 50px;
+    font-size: 20px;
+}
+.pass{
+    position: relative;
+    top: 80px;
+    left: 50px;
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+}
+.login_button{
+    position: relative;
+    top: 110px;
+    left: 80px;
+    height: 40px;
+    width: 250px;
+    background-color: rgba(223, 119, 9, 1);
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}

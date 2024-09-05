@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <span class="login">Login Here</span>
+        <form id="loginForm">
+            <input type="email" placeholder="Email Address" class="mail" name="Email_Address" required> <br>
+            <input type="password" placeholder="Password" class="pass" name="Password" required> <br>
+            <button type="submit" class="login_button">LOGIN</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this);
+
+            fetch('/login', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(message => {
+                Swal.fire({
+                    title: message,
+                    icon: message.includes('successful') ? 'success' : 'error',
+                    timer: 3000,
+                    showConfirmButton: false
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
